@@ -1,4 +1,3 @@
-import re
 import ast
 
 #opening files with the interval lists
@@ -58,8 +57,8 @@ for x in intervalsL1:
     for z in range(1,2):
         endL1.append(x[z])
 
-print(beginL1)
-print(endL1)
+#print(beginL1)
+#print(endL1)
 
 #now do the same for L2
 beginL2 = []
@@ -71,10 +70,28 @@ for m in intervalsL2:
     for o in range(1,2):
         endL2.append(m[o])
 
-print(beginL2)
-print(endL2)
+#print(beginL2)
+#print(endL2)
 
 #now compare positions
+
 overlap = 0
 
-for d in 
+for d in range(len(beginL2)-2):
+    if (endL1[d] > beginL2[d] > beginL1[d]) or (endL1[d] > endL2[d] > beginL1[d]):
+        overlap = overlap + 1
+
+print(overlap)
+
+#now the same the other way around
+overlap2 = 0
+
+for e in range(len(beginL2)-2):
+    if (endL2[e] > beginL1[e] > beginL2[e]) or (endL2[e] > endL1[e] > beginL2[e]):
+        print('yes')
+        overlap2 = overlap2 + 1
+
+print(overlap2)
+
+#nu proberen per interval lijstje van I langs L2 af te lopen en kijken of je er zo wel komt
+#het probleem dat de code tegen verschillende lengtes aanloopt moet eruit want dat gaan ze sws testen
