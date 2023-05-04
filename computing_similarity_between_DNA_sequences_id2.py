@@ -22,7 +22,7 @@ for a in L2:
     new2 = ast.literal_eval(a)
     LS2.append(new2)
 
-#print(LS2)
+print(LS2)
 
 #trying the overlap code without using previous code
 #LS1 = [([2,5],[11,17],[22,37])]
