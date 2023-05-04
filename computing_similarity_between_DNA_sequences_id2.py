@@ -9,31 +9,38 @@ L1 = set1.readlines() #dit is een lijst van strings
 L2 = set2.readlines() #dit is een lijst van strings
 
 #make usable lists of the lists of intervals of set 1
-newL1 = [] #this will be a list of tuples containing the interval lists, where one tuple is one line
+LS1 = [] #this will be a list of tuples containing the interval lists, where one tuple is one line
 for i in L1:
     new = ast.literal_eval(i)
-    newL1.append(new)
+    LS1.append(new)
 
-
+print(LS1)
 
 #make usable lists of the lists of intervals of set 2
-newL2 = []
+LS2 = []
 for a in L2:
     new2 = ast.literal_eval(a)
-    newL2.append(new2)
+    LS2.append(new2)
 
+#print(LS2)
 
 #trying the overlap code without using previous code
-LS1 = [([2,5],[11,17],[22,37])]
-LS2 = [([3,8],[18,20],[24,26],[29,33])]
+#LS1 = [([2,5],[11,17],[22,37])]
+#LS2 = [([3,8],[18,20],[24,26],[29,33])]
 
 #for ls12
 overlap_list = []
 for tuple in LS1:
     overlap = 0
+    #print(tuple)
     for start1, end1 in tuple:
+        #print(start1)
+        #print(end1)
         for tuple2 in LS2:
+            #print(tuple2)
             for start2, end2 in tuple2:
+                #print(start2)
+                #print(end2)
                 if start1 <= end2 and end1 >= start2:
                     overlap = overlap + 1
                     break  # Exit the inner loop if overlap is found
@@ -57,7 +64,7 @@ for tuple2 in LS2:
 print('overlap from LS2 view', overlap_list2)
 #n1 and n2 are the numbers of intervals in the lists
 
-#for n1, n2
+#for n1, n2 GAAT GOED!!
 n1 = []
 n2 = []
 for tuple in LS1:
@@ -66,8 +73,8 @@ for tuple in LS1:
 for tuple2 in LS2:
     n2.append(len(tuple2))
 
-print('nr of intervals LS1', n1)
-print('nr of intervals LS2', n2)
+#print('nr of intervals LS1', n1)
+#print('nr of intervals LS2', n2)
 
 #eventual formulas
 LStot = 0
@@ -78,9 +85,14 @@ for s in range(len(overlap_list)):
     LStot = LStot + LS
 
 #since len(newL1) == len(newL2) always
-finalMetric = LStot / len(newL1)
+finalMetric = LStot / len(LS1)
+print(finalMetric)
 
 #write result to file
 #f = open("finalMetric.txt", "x")
 finalMetric_rounded = ('%.2f' %finalMetric)
+print(finalMetric_rounded)
 #f.write(finalMetric_rounded)
+
+
+#unfortunately the inended for loops are wrong so we are going to try something else
