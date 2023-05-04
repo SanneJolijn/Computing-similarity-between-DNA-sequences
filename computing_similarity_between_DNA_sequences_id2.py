@@ -13,45 +13,32 @@ newL1 = [] #this will be a list of tuples containing the interval lists, where o
 for i in L1:
     new = ast.literal_eval(i)
     newL1.append(new)
-intervalsL1 = [] #this is a list of tuples containing my intervals
+
+
 
 #make usable lists of the lists of intervals of set 2
 newL2 = []
 for a in L2:
     new2 = ast.literal_eval(a)
     newL2.append(new2)
-intervalsL2 = [] #this is a list of tuples containing my intervals
 
 
 #trying the overlap code without using previous code
-LS1 = [([2,5],[11,17],[22,37]), ([110,117],[255,263])]
-LS2 = [([3,8],[18,20],[24,26],[29,33]), ([117,120],[240,256],[259,307])]
+LS1 = [([2,5],[11,17],[22,37])]
+LS2 = [([3,8],[18,20],[24,26],[29,33])]
 
 #for ls12
 overlap_list = []
-nr_intervals1 = []
-nr_intervals2 = []
 for tuple in LS1:
     overlap = 0
-    intervals1 = 0
     for start1, end1 in tuple:
-        intervals1 = intervals1 + 1
         for tuple2 in LS2:
-            intervals2 = 0
-            print(intervals2)
             for start2, end2 in tuple2:
-                
-                print(intervals2)
                 if start1 <= end2 and end1 >= start2:
                     overlap = overlap + 1
                     break  # Exit the inner loop if overlap is found
     overlap_list.append(overlap)
-    nr_intervals1.append(intervals1)
-    nr_intervals2.append(intervals2)
-
-print(overlap_list)
-print(nr_intervals1)
-print(nr_intervals2)
+print('overlap from LS1 view', overlap_list)
 
 #for ls21
 overlap_list2 = []
@@ -67,5 +54,29 @@ for tuple2 in LS2:
                     break  # Exit the inner loop if overlap is found
     overlap_list2.append(overlap2)
 
-
+print('overlap from LS2 view', overlap_list2)
 #n1 and n2 are the numbers of intervals in the lists
+
+#for n1, n2
+n1 = []
+n2 = []
+for tuple in LS1:
+    n1.append(len(tuple))
+
+for tuple2 in LS2:
+    n2.append(len(tuple2))
+
+print('nr of intervals LS1', n1)
+print('nr of intervals LS2', n2)
+
+#eventual formulas
+LStot = 0
+for s in range(len(overlap_list)):
+    ls12 = (overlap_list[s]/max(n1[s],n2[s]))
+    ls21 = (overlap_list2[s]/max(n1[s],n2[s]))
+    LS = ((ls12 + ls21)/2)
+    LStot = LStot + LS
+
+#since len(newL1) == len(newL2) always
+finalMetric = LStot / len(newL1)
+
