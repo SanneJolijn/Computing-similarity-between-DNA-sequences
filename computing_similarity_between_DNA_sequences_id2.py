@@ -80,3 +80,7 @@ for s in range(len(overlap_list)):
 #since len(newL1) == len(newL2) always
 finalMetric = LStot / len(newL1)
 
+#write result to file
+#f = open("finalMetric.txt", "x")
+finalMetric_rounded = ('%.2f' %finalMetric)
+#f.write(finalMetric_rounded)
