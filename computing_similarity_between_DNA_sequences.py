@@ -76,3 +76,5 @@ print(endL2)
 
 #now compare positions
 overlap = 0
+
+for d in 
