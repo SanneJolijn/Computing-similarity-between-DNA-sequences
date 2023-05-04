@@ -31,7 +31,7 @@ for j in newL1:
     for k in j:
         intervalsL1.append(k)
 
-#print(intervalsL1) #this is a list of my intervals as lists so this we can work with
+print(intervalsL1) #this is a list of my intervals as lists so this we can work with
 
 #now we do the same for L2
 newL2 = []
