@@ -14,7 +14,7 @@ for i in L1:
     new = ast.literal_eval(i)
     LS1.append(new)
 
-#print(LS1)
+print(LS1)
 
 #make usable lists of the lists of intervals of set 2
 LS2 = []
@@ -22,7 +22,7 @@ for a in L2:
     new2 = ast.literal_eval(a)
     LS2.append(new2)
 
-#print(LS2)
+print(LS2)
 
 #for computing similarity
 def has_overlap(l1, l2):
