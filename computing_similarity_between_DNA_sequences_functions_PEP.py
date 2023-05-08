@@ -1,21 +1,36 @@
-#importing needed packages
+# Importing all packages we need.
 import ast
 
 
-def open_read_file(file_name):
-    set1 = open(file_name) #opening files with the interval lists
-    L1 = set1.readlines() #dit is een lijst van strings #reading in text files and putting them into lists
-    LS1 = [] #make usable lists of the lists of intervals of set 1 #this will be a list of tuples containing the interval lists, where one tuple is one line
-    for i in L1:
-        new = ast.literal_eval(i)
-        LS1.append(new)
-    return LS1
+def file_to_list(file_name):
+    '''This function opens the provided files and reads into them.
+    The function then creates a list of strings containing the intervals.
+    Since we cannot use the strings we convert these to lists of tuples containing the intervals.
 
-LS1 = open_read_file('sample_set3.txt')
-LS2 = open_read_file('sample_set4.txt')
+    Args:
+        file_name (str): The name of the file containing the interval lists.
+    
+    Returns:
+        A list of tuples containing the intervals. Where each tuple is one line in the text file.
 
-#for computing similarity
+    '''
+    openFile = open(file_name) 
+    readFile = openFile.readlines() 
+
+    listSimilarity = [] 
+    for i in readFile:
+        tupleSimilarity = ast.literal_eval(i)
+        listSimilarity.append(tupleSimilarity)
+
+    return listSimilarity
+
+lS1 = file_to_list('sample_set3.txt')
+lS2 = file_to_list('sample_set4.txt')
+
+
 def has_overlap(l1, l2):
+    '''
+    '''
     overlap = 0
     for start1, end1 in l1:
         for start2, end2 in l2:
@@ -25,7 +40,7 @@ def has_overlap(l1, l2):
     return overlap
 
 #for computing ls12 and ls21
-def compute_ls_and_n(list_of_tuples):
+def compute_ls_n(list_of_tuples):
     results_ls = []
     for s in range(len(list_of_tuples)):
         result = has_overlap(LS1[s], LS2[s])
