@@ -56,6 +56,8 @@ def final_calculations(results1, results2, n1, n2, list_of_tuples):
 
 fm_rounded = final_calculations(results_12, results_21, n1, n2, LS1)
 
+print(fm_rounded)
+
 #write result to file
 #f = open("finalMetric.txt", "x")
 #f.write(finalMetric_rounded)

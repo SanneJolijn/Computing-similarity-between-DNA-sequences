@@ -24,8 +24,8 @@ def file_to_list(file_name):
 
     return listSimilarity
 
-lS1 = file_to_list('sample_set3.txt')
-lS2 = file_to_list('sample_set4.txt')
+lS1 = file_to_list('sample_set1.txt')
+lS2 = file_to_list('sample_set2.txt')
 
 
 def has_overlap(l1, l2):
