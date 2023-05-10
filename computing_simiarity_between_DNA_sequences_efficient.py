@@ -7,8 +7,9 @@ def has_overlap(interval, comparison_list):
         if interval[0] <= comparison_list[i][1] and interval[1] >= comparison_list[i][0]:
             return 1
     return 0
+### hier kunnen we ook de any statement gebruiken, maar is dit efficienter?
 
-def similarity(set_1='sample_set1.txt', set_2='sample_set2.txt', outfile='similarity.txt'):
+def similarity(set_1='sample_set0.txt', set_2='sample_set01.txt', outfile='similarity.txt'):
     LS1 = file_to_tuples(set_1)
     LS2 = file_to_tuples(set_2)
 
@@ -23,7 +24,8 @@ def similarity(set_1='sample_set1.txt', set_2='sample_set2.txt', outfile='simila
     S_fin = S / len(LS1)
 
     with open(outfile, 'w') as x:
-        x.write('%.2f' %S_fin)
+        x.write('%f' %S_fin)
+        #x.write('%.2f' %S_fin)
 
     return S_fin
 
