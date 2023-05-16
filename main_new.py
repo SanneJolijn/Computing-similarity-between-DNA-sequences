@@ -8,6 +8,7 @@ def read_file(file_name):
         A list of tuples representing intervals, where each tuple corresponds to one line in the file.
 
     Raises:
+        FileNotFoundError: [Errno 2] No such file or directory: 'sample_set.txt'
         IOError: If the file cannot be opened or read.
         ValueError: If the content of the file is not formatted correctly.
 
@@ -66,10 +67,13 @@ def similarity(set_1, set_2, outfile):
 
     # Write the similarity metric to the output file
     with open(outfile, 'w') as x:
-        x.write('%f' % S)
+        x.write('%.2f' % S)
 
     #this is a possible fix for the rounding to even nr https://stackoverflow.com/questions/20457038/how-to-round-to-2-decimals-with-python
     print(round((S+10**(-10)),2))
     print(S)
 
     return S
+
+#hij rond de getallen nog verkeerd af, en kijken hoe ik met het importeren of ik de meegegeven sets ook in mijn code die ik inlever wil definieren.
+#ook kijken: zouden ze de de sets een verschillende hoeveelheid lines geven?
