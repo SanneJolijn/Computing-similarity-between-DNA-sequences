@@ -37,7 +37,7 @@ def has_overlap(interval, to_compare):
     return 0
 ### hier kunnen we ook de any statement gebruiken, maar is dit efficienter? En kan ik dit uitleggen in de docstring?
 
-def similarity(set_1='sample_set1.txt', set_2='sample_set2.txt', outfile='similarity.txt'):
+def similarity(set_1, set_2, outfile):
     """This function calls on the has_overlap function for every interval to compare it to the intervals in the tuple 
        from the corresponding line.
 
@@ -66,6 +66,9 @@ def similarity(set_1='sample_set1.txt', set_2='sample_set2.txt', outfile='simila
     S = S_intermediate / len(ls1)
 
     with open(outfile, 'w') as x:
-        x.write('%.2f' %S)
+        x.write('%f' %S)
+        #x.write('%.2f' %S)
 
     return S
+
+#hij rond de getallen nog verkeerd af, en kijken hoe ik met het importeren of ik de meegegeven sets ook in mijn code die ik inlever wil definieren.
