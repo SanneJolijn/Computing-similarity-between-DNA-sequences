@@ -1,20 +1,23 @@
-# ass1_8cc00
-# Interval Similarity Calculation
+# Advanced programming 8CC00 - Assignment 1
+# Computing similarity between DNA sequences
 
-This program calculates the similarity metric between two sets of interval lists. It determines the degree of overlap between intervals in the two sets and computes a similarity score based on the overlapping intervals.
+Using advanced programming to elaborate complex DNA data to extract usefull information, this program calculates the similarity metric between two sets of interval lists. It determines the degree of overlap between intervals in the two sets and computes a similarity score based on the overlapping intervals. 
+
+We used the technologies we used
+
+Some of the challenges you faced and features you hope to implement in the future.
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/yourusername/interval-similarity.git`
-2. Navigate to the project directory: `cd interval-similarity`
-3. Install the required dependencies: `pip install -r requirements.txt`
+1. Clone the repository: `git clone https://github.com/SanneJolijn/ass1_8cc00.git`
+2. Navigate to the project directory: `cd ass1_8cc00`
 
 ## Usage
 
-To calculate the similarity between two interval sets, follow these steps:
+To calculate the similarity metric between two sets of interval lists, follow these steps:
 
-1. Prepare two files, each containing interval lists. Each line in the file represents one interval, and each interval is represented as a tuple of two numbers (start, end).
-2. Update the `set_1` and `set_2` variables in the `similarity` function call in the `main.py` file to point to the respective interval list files.
+1. Check your two files. Each file should contain lists of intervals. Each line in the file represents a list of intervals, and each interval is represented as a list of two numbers [start, end]
+2. Update the `set_1` and `set_2` variables in the `similarity` function call in the `main.py` file to point to the correct interval list files.
 3. Run the program: `python main.py`
 4. The program will calculate the similarity metric and store it in the specified output file.
 
@@ -23,14 +26,6 @@ To calculate the similarity between two interval sets, follow these steps:
 - `main.py`: The main script that calculates the similarity metric.
 - `utils.py`: Contains utility functions for reading files, checking interval overlap, and performing calculations.
 - `README.md`: This file providing information about the program.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contributing
-
-Contributions are welcome! Please feel free to open an issue or submit a pull request.
 
 ## Acknowledgments
 

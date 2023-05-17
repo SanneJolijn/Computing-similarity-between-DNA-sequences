@@ -14,6 +14,7 @@ def read_file(file_name):
 
     """
     with open(file_name) as f:
+        # Read each line in the file and format it as a tuple representing an interval
         return [eval(line.strip()) for line in f]
 
 
@@ -27,12 +28,19 @@ def has_overlap(interval, to_compare):
     Returns:
         1 if overlap is found between intervals.
         0 if no overlap is found between intervals.
+    
+    Raises:
+        TypeError: If either interval or to_compare is not a list of tuples.
+        ValueError: If either interval or any tuple in to_compare is not of length 2.
 
     """
+    # Compare the interval against each interval in to_compare
     for i in range(len(to_compare)):
         if interval[0] <= to_compare[i][1] and interval[1] >= to_compare[i][0]:
             return 1
     return 0
+
+### hier kunnen we ook de any statement gebruiken, maar is dit efficienter? En kan ik dit uitleggen in de docstring?
 
 
 def similarity(set_1, set_2, outfile):
@@ -44,10 +52,12 @@ def similarity(set_1, set_2, outfile):
         outfile (str): The name of the file to create and store the final metric.
 
     Returns:
+
         The similarity metric portraying the similarity between the two data sets.
 
     Raises:
         IOError: If any of the input files cannot be opened or read.
+        ValueError: If the content of any of the input files is not formatted correctly.
 
     """
     # Read interval lists from set_1 and set_2 files
@@ -70,8 +80,8 @@ def similarity(set_1, set_2, outfile):
         x.write('%.2f' % S)
 
     #this is a possible fix for the rounding to even nr https://stackoverflow.com/questions/20457038/how-to-round-to-2-decimals-with-python
-    print(round((S+10**(-10)),2))
-    print(S)
+    #print(round((S+10**(-10)),2))
+    #print(S)
 
     return S
 
