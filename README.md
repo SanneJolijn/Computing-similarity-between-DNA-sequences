@@ -24,8 +24,8 @@ To calculate the similarity metric between two sets of interval lists, follow th
 ## File Structure
 
 - `main.py`: The main script that calculates the similarity metric.
-- `utils.py`: Contains utility functions for reading files, checking interval overlap, and performing calculations.
-- `README.md`: This file providing information about the program.
+- `utils.py`: Contains utility functions for reading files and checking interval overlap.
+- `README.md`: This file provides information about the program.
 
 ## Acknowledgments
 
