@@ -1,5 +1,5 @@
-from utility import read_file
-from utility import has_overlap
+from utils import read_file
+from utils import has_overlap
 
 def similarity(set_1, set_2, outfile):
     """Calculate the similarity metric between two data sets based on their interval lists.

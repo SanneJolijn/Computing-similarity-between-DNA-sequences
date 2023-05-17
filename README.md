@@ -16,10 +16,14 @@ Some of the challenges you faced and features you hope to implement in the futur
 
 To calculate the similarity metric between two sets of interval lists, follow these steps:
 
-1. Check your two files. Each file should contain lists of intervals. Each line in the file represents a list of intervals, and each interval is represented as a list of two numbers [start, end]
-2. Update the `set_1` and `set_2` variables in the `similarity` function call in the `main.py` file to point to the correct interval list files.
-3. Run the program: `python main.py`
-4. The program will calculate the similarity metric and store it in the specified output file.
+1. Check your two files. Each file should contain the same amount of lines. Each line in the file represents a list of intervals, and each interval is represented as a list of two numbers [start, end].
+2. Run the program by using a command in the form below, be sure to update the `set_1` and `set_2` variables in the `similarity` function call to point to the correct interval list files. 
+
+from main import similarity\
+similarity(set_1='set1_name.txt', set_2='set2_name.txt', outfile='similarity.txt')
+
+
+3. The program will calculate the similarity metric and store it in the specified output file.
 
 ## File Structure
 
@@ -29,5 +33,5 @@ To calculate the similarity metric between two sets of interval lists, follow th
 
 ## Acknowledgments
 
-- This program was inspired by the need to compare interval data sets in various research fields.
+- This program was inspired by the assignment created by Dr. Dragan Bosnacki.
 - Thanks to the developers of the Python programming language and the open-source libraries used in this project.
